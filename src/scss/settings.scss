@@ -1,0 +1,188 @@
+.dashboard-comp {
+    .dashboard-main {
+        padding: 20px;
+        background-color: #fff;
+        width: 100%;
+        height: 100%;
+    }
+
+    .settings-section {
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+
+        .setting-item {
+        margin-bottom: 16px;
+
+        h4 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .input-field {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            width: 100%;
+            max-width: 400px;
+            outline: none;
+        }
+
+        .btn-secondary {
+            padding: 10px 20px;
+            background-color: #e0e0e0;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+            background-color: #d4d4d4;
+            }
+        }
+
+        .btn-toggle {
+            padding: 6px 12px;
+            background-color: #f1f1f1;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &.enabled {
+            background-color: #28a745;
+            color: white;
+            }
+
+            &.disabled {
+            background-color: #d9534f;
+            color: white;
+            }
+        }
+
+        .btn-option {
+            padding: 8px 16px;
+            background-color: #f1f1f1;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+
+            &.btn-selected {
+            background-color: #007bff;
+            color: white;
+            }
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 32px;
+
+            .profile-info {
+            h2 {
+                font-size: 1.25rem;
+                font-weight: 600;
+            }
+
+            p {
+                color: #555;
+            }
+
+            button {
+                padding: 6px 12px;
+                border-radius: 6px;
+                background-color: #e0e0e0;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+
+                &:hover {
+                background-color: #d4d4d4;
+                }
+            }
+            }
+        }
+
+        .theme-options {
+            display: flex;
+            gap: 16px;
+        }
+
+        .notification-toggle {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            padding: 8px 0;
+        }
+
+        .preferences-options {
+            .preference-option {
+            margin-bottom: 16px;
+
+            select {
+                width: 100%;
+                padding: 10px;
+                border-radius: 6px;
+                border: 1px solid #ccc;
+            }
+            }
+        }
+        }
+
+        .notification-options {
+        .notification-toggle {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+        }
+    }
+}
+
+// Specific styles for Account Settings
+.account-settings {
+  .setting-item {
+    .profile-section {
+      flex-direction: column;
+      text-align: center;
+
+      .profile-info {
+        text-align: center;
+      }
+    }
+
+    .notification-options {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+// Specific styles for System Settings
+.system-settings {
+  .setting-item {
+    .api-key-section {
+      .flex {
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .input-field {
+        width: 300px;
+        max-width: 100%;
+      }
+    }
+
+    .integration-options,
+    .role-management-options {
+      .btn-secondary {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+    }
+  }
+}

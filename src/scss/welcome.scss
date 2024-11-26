@@ -1,0 +1,49 @@
+.welcome-page {
+    max-height: 100%;
+    max-width: 100%;
+    background: linear-gradient(to right, #8f44ff, #d67efe);
+
+    .welcome-comp {
+
+        // width: 40vw;
+        * {
+            width: 100%;
+            align-self: start;
+            justify-self: start;
+            text-align: start;
+        }
+
+        .w-txt2 {
+            font-size: 7vw;
+            padding: 10px 0px;
+            text-align: center;
+            border-bottom: 5px solid #000;
+        }
+
+        .st-2 {
+            padding: 27.5px;
+        }
+
+        .text-st {
+            gap: 50px;
+
+            h5 {
+                font-size: 20px;
+                width: auto;
+            }
+        }
+
+        .open-button {
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+            transition: all 0.75s ease-in-out;
+            background: rgb(222, 191, 255);
+
+            &:hover {
+                background: white;
+                box-shadow: 0 3px 15px rgba(121, 29, 182, 0.5);
+            }
+        }
+    }
+
+}

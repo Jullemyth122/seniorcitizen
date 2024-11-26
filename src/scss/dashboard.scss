@@ -1,0 +1,646 @@
+.dashboard-comp {
+  position: relative;
+  .dashboard-main {
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+
+    .list-data {
+      .new-applicants, .all-data, .dswd-applicant {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        width: 300px;
+        height: 200px;
+        background: linear-gradient(to right, #b482ff, #d478ff);
+        border: 1.5px solid #000;
+        box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.25);
+
+        .text-side {
+          width: 50%;
+        }
+
+        h3, p {
+          text-align: center;
+        }
+
+        svg {
+          width: 100px;
+          height: 100px;
+        }
+      }
+      
+      /* Optionally, you can set specific width and height based on the parent div */
+      .pie-chart {
+        padding: 10px;
+        width: 400px;             /* Custom width */
+        height: 400px;            /* Custom height */
+      }
+      
+      .line-chart {
+        padding: 10px;
+        width: 800px;             /* Custom width */
+        height: 400px;            /* Custom height */
+      }
+      
+    }
+
+
+
+    .dash-title {
+      border-bottom: 2px solid #000;
+      margin: 10px 0px;
+      margin-bottom: 20px;
+    }
+    
+    .edit-content {
+      padding: 10px;
+      margin: 10px auto;
+      background: #d67efe;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      max-width: 100%;
+      margin: 20px auto;
+
+      h2 {
+        text-align: center;
+        font-size: 24px;
+        color: white;
+        margin-bottom: 10px;
+      }
+
+      .form-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: space-between;
+
+        .form-group {
+          width: 28.5%;
+          min-width: 100px;
+          display: flex;
+          flex-direction: column;
+
+          label {
+            font-size: 14px;
+            color: white;
+            font-weight: 600;
+            margin-bottom: 5px;
+          }
+
+          select,input {
+            padding: 12px;
+            font-size: 14px;
+            border: 1.5px solid #000;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            margin-bottom: 10px;
+            transition: border-color 0.3s ease;
+
+            &:focus {
+              border-color: #8f44ff;
+              outline: none;
+            }
+          }
+        }
+      }
+
+      .button-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        margin-top: 10px;
+        width: 100%; /* Ensure buttons stay aligned properly */
+
+        .submit-btn {
+          background-color: #ffff;
+          padding: 12px 15px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 16px;
+          transition: background-color 0.3s ease, transform 0.2s ease;
+          width: 48%; /* Button width */
+          
+          &:hover {
+            background-color: #772ae6;
+            transform: translateY(-2px);
+          }
+
+          &:focus {
+            outline: none;
+          }
+        }
+
+        .cancel-btn {
+          background-color: #f44336; /* Red for Cancel */
+          color: white;
+          padding: 12px 15px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 16px;
+          transition: background-color 0.3s ease, transform 0.2s ease;
+          width: 48%; /* Button width */
+          
+          &:hover {
+            background-color: #e41d29;
+            transform: translateY(-2px);
+          }
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+
+
+
+    .option-data {
+
+
+      input {
+        border: 1px solid #000;
+        padding: 5px;
+        box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.25);
+      }
+
+
+
+      .applicant-opt {
+        button {
+          box-shadow: 0px 1px 7px rgba(223, 215, 215, 0.25);
+          font-size: 15px;
+          width: 185px;
+          padding: 7.5px;
+          background: #d67efe;
+          outline: none;
+          border: 1px solid #000;
+          transition: all 0.75s ease-in-out;
+          &:hover {
+            box-shadow: 0px 3px 10px #d67efe;
+          }
+        }
+      }
+    }
+
+    /* Pagination Styles */
+    .pagination-container {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .pagination-btn {
+      padding: 5px 10px;
+      background-color: #f0f0f0;
+      border: 1px solid #ddd;
+      cursor: pointer;
+    }
+
+    .pagination-btn:disabled {
+      background-color: #e0e0e0;
+      cursor: not-allowed;
+    }
+
+    .pagination-btn.active {
+      background-color: #8f44ff;
+      color: white;
+    }
+
+    .archive-btn,
+    .edit-btn,
+    .delete-btn {
+      padding: 5px 10px;
+      margin: 5px 5px;
+      cursor: pointer;
+      background: #d67efe;
+      color: #fff;
+    }
+
+    /* Table Container */
+    .table-container {
+      width: calc(100vw - 300px - 30px );
+      overflow-x: auto; /* Enable horizontal scrolling on small screens */
+      padding: 20px;
+    }
+
+    /* Table Styling */
+    .info-table {
+        width: 100%;
+        overflow-x: auto; /* Enable horizontal scrolling on small screens */
+        border-collapse: collapse;
+        margin-top: 20px;
+        font-family: Arial, sans-serif;
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+        thead,tr {
+            width: 100%;
+            overflow-x: auto;
+        }
+        /* Table Header Styling */
+        th {
+            // background-color: #4CAF50; /* Green header */
+            background: #d67efe;
+
+            color: white;
+            padding: 10px 15px;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        /* Table Cell Styling */
+        td {
+            padding: 10px 15px;
+            text-align: left;
+            font-size: 13px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Table Row Hover Effect */
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        /* Alternate Row Color for Better Readability */
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    }
+
+
+    /* Make the table responsive for smaller screens */
+    @media (max-width: 768px) {
+      .info-table th,
+      .info-table td {
+        padding: 8px;
+        font-size: 12px;
+      }
+    }
+  }
+
+  .create-applicant {
+    top: 0;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 200;
+    background: rgba(0, 0, 0, 0.25);
+    padding: 40px;
+
+    .buttons { 
+      position: absolute;
+      bottom: 50px;
+      right: 50px;
+      gap: 20px;
+      button {
+        padding: 10px 20px;
+        color: #000;
+        outline: none;
+        border: 1px solid #000;
+      }
+
+      .btn-exit {
+        background: #fff;
+      }
+
+      .btn-print {
+        background: #8f44ff;
+      }
+    }
+
+    .id-card {
+      padding: 20px;
+
+
+      .front,.back {
+        width: 50%;
+      }
+
+      .main-name {
+        font-size: 20px;
+        font-weight: bold;
+      }
+      
+      .line {
+        margin: 0 auto;
+        margin-top: 5px;
+        width: 90%;
+        height: 1px; 
+        background: #000;
+      }
+
+      .id-item {
+        width:42vw;
+        height:400px;
+        border: 1.5px solid #000;
+        border-radius: 15px;
+        position: relative;
+        overflow: hidden;
+        z-index: 2;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+        .id-text,.id-bg, [class*="id-lg"] {
+          z-index: -1;
+          opacity: 0.5;
+          position: absolute;
+        }
+
+        .id-lg-1 {
+          width: 25vw;
+          height: 25vw;
+          bottom: -25%;
+          right: -15%;
+        }
+        .id-lg-2 {
+          width: 100px;
+          height: 100px;
+          top: 10%;
+          right: 10%;
+        }
+
+        .text-ids {
+          width: 60%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction:  column;
+          text-align: center;
+          h1 { 
+            font-size: 15px;
+            font-weight: bold;
+          }
+          p {
+            font-size: 10px;
+          }
+          h5 {
+            font-weight: 600;
+            font-size: 11px;
+          }
+        }
+        
+        .logo-id {
+          width: 100px;
+          height: 100px;
+        }
+      }
+      
+      .id-main {
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 5px;
+        gap: 30px;
+        .std-lf {
+          width: 50%;
+          height: 100%;
+
+          & > * {
+            align-self: flex-start;
+            justify-self: flex-start;
+          }
+          img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+          }
+        }
+
+        h3 {
+          font-size: 13px;
+          padding: 5px;
+        }
+        .std-rt {
+          width: 50%;
+        }
+      }
+      .back {
+        .id-bg {
+          opacity: 0.9;
+        }
+
+        .id-main {
+          height: 100%;
+          .qr-image {
+            width: 80%;
+            height: 80%;
+          }
+
+          .signature {
+            .line {
+              width: 100%;
+            }
+            h1 {
+              font-size: 15px;
+            }
+          }
+
+        }
+      }
+
+      .label-form {
+        label {
+          font-size: 13px;
+          font-weight: bold;
+        }
+        p, li {
+          font-size: 12px;
+        }
+      }
+    }
+
+
+    .submittion-status {
+      position: absolute;
+      z-index: 201;
+      background: rgba(0, 0, 0, 0.25);
+      width: 100%;
+      height: 100%;
+      padding: 50px;
+
+      /* Loading spinner */
+      .loading-spinner {
+        justify-self: center;
+        align-self: center;
+        border: 8px solid #f3f3f3; /* Light grey background */
+        border-top: 8px solid #d67efe; /* Blue color */
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        animation: spin 1.5s linear infinite;
+
+        &.stop_spin {
+          animation: none; /* This stops the spinner animation */
+        }
+      }
+
+      /* Spin animation */
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+
+      .correction {
+        border-radius: 20px;
+        background: #fff;
+        border: 2px solid #000;
+        width: 90%;
+        height: 75%;
+        position: relative;     
+        
+        .show-id {
+          padding: 7.5px;
+          background: #d67efe;
+          border-radius: 5px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+
+          h5 {
+            color: #fff;
+          }
+        }
+        
+        svg {
+          align-self: center;
+          justify-self: center;
+          width: 75px;
+          height: 75px;
+        }
+      }
+    }
+
+
+    .card-applicant {
+        border-radius: 20px;
+        background: #fff;
+        border: 2px solid #000;
+        width: 100%;
+        height: 95%;
+        position: relative;
+
+        .exit {
+            cursor: pointer;
+            width: 35px;
+            height: 35px;
+            position: absolute;
+            right: 15px;
+            top: 15px;
+        }
+
+        .img-card {
+            width: calc(30% - 20px);
+            height: calc(100% - 20px);
+            padding: 10px;
+
+            img,
+            svg {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            }
+        }
+
+        .img-opt {
+            button {
+            padding: 5px 15px;
+            font-size: 17px;
+            background: #8f44ff;
+            color: #fff;
+            border-radius: 7.5px;
+            outline: navajowhite;
+            }
+        }
+
+        .header-card {
+            border-bottom: 2px solid #000;
+        }
+        /* FileUpload.css */
+        .file-upload-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            // width: 100%;
+        }
+
+        .file-upload {
+            display: inline-flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .file-upload input[type="file"] {
+            display: none;
+            /* Hide default file input */
+        }
+
+        .file-upload-button {
+            background-color: #8f44ff;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 5px;
+            font-weight: 500;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-right: 12px;
+        }
+
+        .file-upload-button:hover {
+            background-color: #772ae6;
+        }
+
+        .file-name {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .fill-text-card {
+            width: 70%;
+            height: 72.5vh;
+            overflow: auto;
+
+            .label-scinfo {
+            // padding: 15px;
+            .label-input {
+                display: grid;
+                & > * {
+                align-self: center;
+                justify-self: start;
+                }
+                select,
+                input {
+                padding: 10px;
+                border: 1.5px solid #000;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+                color: #000;
+
+                &::placeholder {
+                    color: #000;
+                }
+                }
+            }
+            }
+
+            .button-opt {
+              button {
+                border: 1.5px solid #000;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+              }
+            }
+        }
+    }
+  }
+}
