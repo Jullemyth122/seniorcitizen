@@ -511,7 +511,11 @@ const DSWD = () => {
                         <div className="applicant-opt flex items-center justify-center gap-3">
                             <button onClick={() => setIsCreateButtonClicked(!isCreateButtonClicked)}> + Add New Applicant   </button>
                             <button> Print MasterList </button>
-                            <button> Bin </button>
+                            <button> 
+                                <Link to={'/admin/bindswd'}>
+                                    Bin  
+                                </Link>
+                            </button>
                         </div>
                     </div>
                     {editData && (
@@ -949,8 +953,9 @@ const DSWD = () => {
 
                             <div className="back">
                                 <div className="id-item">
-                                    <img className='id-bg' src="/img/imgbg.jpg" alt="" />
-                                    <img className='id-text' src="/img/imgtext.jpg" alt="" />
+                                    <img className='id-bg' src="/img/imgtext.jpg" alt="" />
+                                    <img className='id-lg-1' src="/img/imglogo.png" alt="" />
+                                    <img className='id-lg-2' src="/img/imglogo2.png" alt="" />
                                     <div className="id-main flex items-center justify-evenly flex-wrap ">
                                         <div className="qr-text grid grid-cols-2 gap-3">
                                             <div className="qr">
@@ -1168,7 +1173,7 @@ const DSWD = () => {
                                             <input
                                                 type="text"
                                                 name="suffix"
-                                                placeholder="ex. Julian"
+                                                placeholder="ex. Jr III"
                                                 value={formData.suffix}
                                                 onChange={handleInputChange}
                                             />
@@ -1180,7 +1185,7 @@ const DSWD = () => {
                                             <input
                                                 type="text"
                                                 name="middleName"
-                                                placeholder="ex. Julian"
+                                                placeholder="ex. Midman"
                                                 value={formData.middleName}
                                                 onChange={handleInputChange}
                                             />
@@ -1192,7 +1197,7 @@ const DSWD = () => {
                                             <input
                                                 type="text"
                                                 name="lastName"
-                                                placeholder="ex. Julian"
+                                                placeholder="ex. Lionel"
                                                 value={formData.lastName}
                                                 onChange={handleInputChange}
                                             />
@@ -1356,7 +1361,7 @@ const DSWD = () => {
                                             <input
                                                 type="text"
                                                 name="address"
-                                                placeholder="ex. Julian"
+                                                placeholder="ex. PMS Caloocan City"
                                                 value={formData.address}
                                                 onChange={handleInputChange}
                                             />
@@ -1391,7 +1396,7 @@ const DSWD = () => {
                                             <input
                                                 type="text"
                                                 name="citizenship"
-                                                placeholder="ex. Julian"
+                                                placeholder="ex. American"
                                                 value={formData.citizenship}
                                                 onChange={handleInputChange}
                                             />
@@ -1427,7 +1432,7 @@ const DSWD = () => {
                                             <input
                                                 type="text"
                                                 name="tin"
-                                                placeholder="ex. Julian"
+                                                placeholder="ex. 3123"
                                                 value={formData.tin}
                                                 onChange={handleInputChange}
                                             />
@@ -1444,7 +1449,7 @@ const DSWD = () => {
                                             <input
                                                 type="text"
                                                 name="philHealth"
-                                                placeholder="ex. PhilHealth"
+                                                placeholder="ex. 1231231"
                                                 value={formData.philHealth}
                                                 onChange={handleInputChange}
                                             />
@@ -1500,7 +1505,7 @@ const DSWD = () => {
                                             <input
                                                 type="text"
                                                 name="psource"
-                                                placeholder="ex. GSIS"
+                                                placeholder="ex. Jobs"
                                                 value={formData.psource}
                                                 onChange={handleInputChange}
                                             />
@@ -1516,7 +1521,7 @@ const DSWD = () => {
                                             <input
                                                 type="text"
                                                 name="psource_desc"
-                                                placeholder="ex. GSIS"
+                                                placeholder="ex. I work for ~"
                                                 value={formData.psource_desc}
                                                 onChange={handleInputChange}
                                             />

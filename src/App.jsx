@@ -15,6 +15,11 @@ import SCChapter from './admin/SCManagement/SCChapter';
 import DSWD from './admin/SCManagement/DSWD';
 import AccountSettings from './admin/AccountSettings';
 import Systemsettings from './admin/Systemsettings';
+import PaymentManagement from './admin/PaymentManagement';
+import ChangeAccUser from './admin/ChangeAccUser';
+import ChangeOfficer from './admin/ChangeOfficer';
+import BinDSWD from './admin/SCManagement/BinDSWD';
+import BinSCChapter from './admin/SCManagement/BinSCChapter';
 
 const App = () => {
   const { isAdminAuthenticated } = useFormContext();
@@ -36,6 +41,31 @@ const App = () => {
           path='/admin/welcome'
           element={isAdminAuthenticated ? <WelcomeAdmin /> : <Navigate to="/admin/login" />}
         />
+
+        <Route
+          path='/admin/paymentmanagement'
+          element={isAdminAuthenticated ? <PaymentManagement /> : <Navigate to="/admin/paymentmanagement" />}
+        />
+
+        <Route
+          path='/admin/changeaccuser'
+          element={isAdminAuthenticated ? <ChangeAccUser /> : <Navigate to="/admin/changeaccuser" />}
+        />
+
+        <Route
+          path='/admin/bindswd'
+          element={isAdminAuthenticated ? <BinDSWD /> : <Navigate to="/admin/bindswd" />}
+        />
+        <Route
+          path='/admin/binscchapter'
+          element={isAdminAuthenticated ? <BinSCChapter /> : <Navigate to="/admin/binscchapter" />}
+        />
+
+        <Route
+          path='/admin/changeofficers'
+          element={isAdminAuthenticated ? <ChangeOfficer /> : <Navigate to="/admin/changeofficers" />}
+        />
+
         <Route
           path='/admin/dashboard'
           element={isAdminAuthenticated ? <Dashboard /> : <Navigate to="/admin/login" />}

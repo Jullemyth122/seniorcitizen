@@ -34,6 +34,7 @@ export const AdminFormProvider = ({ children }) => {
 
     // Update localStorage when formData or authentication status changes
     useEffect(() => {
+        // console.log(formData);
         localStorage.setItem('adminFormData', JSON.stringify(formData));
     }, [formData]);
     

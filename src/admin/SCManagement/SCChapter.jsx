@@ -476,7 +476,11 @@ const SCChapter = () => {
                         <div className="applicant-opt flex items-center justify-center gap-3">
                             <button onClick={() => setIsCreateButtonClicked(!isCreateButtonClicked)}> + Add New Applicant   </button>
                             <button> Print MasterList </button>
-                            <button> Bin </button>
+                            <button> 
+                                <Link to={'/admin/binscchapter'}>
+                                    Bin 
+                                </Link>
+                            </button>
                         </div>
                     </div>
 
@@ -961,22 +965,9 @@ const SCChapter = () => {
                                                 value={formData.oscaID}
                                                 onChange={handleInputChange}
                                             />
+                                            <label htmlFor=""> Osca ID Number. </label>
                                             {errors.oscaID && <label className="text-red-500">{errors.oscaID}</label>}
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="label-scinfo">
-                                    <label htmlFor="">Control No.</label>
-                                    <div className="label-inputs flex items-center justify-start gap-4">
-                                        <div className="label-input">
-                                            <input
-                                                type="text"
-                                                name="contrNum"
-                                                placeholder="ex. 22321231132"
-                                                value={formData.contrNum}
-                                                onChange={handleInputChange}
-                                            />
-                                            {errors.contrNum && <label className="text-red-500">{errors.contrNum}</label>}
+
                                         </div>
                                     </div>
                                 </div>
@@ -991,37 +982,45 @@ const SCChapter = () => {
                                                 value={formData.firstName}
                                                 onChange={handleInputChange}
                                             />
+                                            <label htmlFor="">Firstname</label>
                                             {errors.firstName && <label className="text-red-500">{errors.firstName}</label>}
+
                                         </div>
                                         <div className="label-input">
                                             <input
                                                 type="text"
                                                 name="suffix"
-                                                placeholder="ex. Julian"
+                                                placeholder="ex. Jr III"
                                                 value={formData.suffix}
                                                 onChange={handleInputChange}
                                             />
                                             <label htmlFor="">Suffix</label>
+                                            {errors.suffix && <label className="text-red-500">{errors.suffix}</label>}
+
                                         </div>
                                         <div className="label-input">
                                             <input
                                                 type="text"
                                                 name="middleName"
-                                                placeholder="ex. Julian"
+                                                placeholder="ex. Midman"
                                                 value={formData.middleName}
                                                 onChange={handleInputChange}
                                             />
+                                            <label htmlFor="">Middle Name</label>
                                             {errors.middleName && <label className="text-red-500">{errors.middleName}</label>}
+
                                         </div>
                                         <div className="label-input">
                                             <input
                                                 type="text"
                                                 name="lastName"
-                                                placeholder="ex. Julian"
+                                                placeholder="ex. Lionel"
                                                 value={formData.lastName}
                                                 onChange={handleInputChange}
                                             />
+                                            <label htmlFor="">Surname</label>
                                             {errors.lastName && <label className="text-red-500">{errors.lastName}</label>}
+
                                         </div>
                                     </div>
                                 </div>
@@ -1041,7 +1040,9 @@ const SCChapter = () => {
                                                     <option key={index} value={month}>{month}</option>
                                                 ))}
                                             </select>
+                                            <label htmlFor="">Month</label>
                                             {errors.birthday && <label className="text-red-500">{errors.birthday}</label>}
+
                                         </div>
                                         <div className="label-input">
                                             <select
@@ -1054,7 +1055,9 @@ const SCChapter = () => {
                                                     <option key={index} value={day}>{day}</option>
                                                 ))}
                                             </select>
+                                            <label htmlFor="">Day</label>
                                             {errors.birthday && <label className="text-red-500">{errors.birthday}</label>}
+
                                         </div>
                                         <div className="label-input">
                                             <select
@@ -1067,7 +1070,7 @@ const SCChapter = () => {
                                                     <option key={index} value={year}>{year}</option>
                                                 ))}
                                             </select>
-
+                                            <label htmlFor="">Year</label>
                                             {errors.birthday && <label className="text-red-500">{errors.birthday}</label>}
                                         </div>
                                     </div>
@@ -1087,7 +1090,9 @@ const SCChapter = () => {
                                                 disabled // Makes the field unclickable and non-editable
 
                                             />
+                                            <label htmlFor=""> ------- </label>
                                             {errors.age && <label className="text-red-500">{errors.age}</label>}
+
                                             </div>
                                     </div>
                                 </div>
@@ -1106,7 +1111,9 @@ const SCChapter = () => {
                                                 <option value="Married">Married</option>
                                                 <option value="Widowed">Widowed</option>
                                             </select>
+                                            <label htmlFor=""> ------- </label>
                                             {errors.civilStat && <label className="text-red-500">{errors.civilStat}</label>}
+
                                         </div>
                                     </div>
                                 </div>
@@ -1121,7 +1128,9 @@ const SCChapter = () => {
                                                 value={formData.placeOfBirth}  // Ensure it shows the calculated age or an empty string
                                                 onChange={handleInputChange}  // You can leave this in case the user tries to edit the field directly
                                             />
+                                            <label htmlFor=""> Address Birth </label>
                                             {errors.placeOfBirth && <label className="text-red-500">{errors.placeOfBirth}</label>}
+
                                         </div>
                                     </div>
                                 </div>
@@ -1139,6 +1148,7 @@ const SCChapter = () => {
                                                 <option value="Female">Female</option>
                                                 <option value="Other">Other</option>
                                             </select>
+                                            <label htmlFor="">Sex</label>
                                             {errors.gender && <label className="text-red-500">{errors.gender}</label>}
                                         </div>
                                     </div>
@@ -1155,7 +1165,9 @@ const SCChapter = () => {
                                                 value={formData.contactNum}
                                                 onChange={handleInputChange}
                                             />
+                                            <label htmlFor="">Tel / Phone No.</label>
                                             {errors.contactNum && <label className="text-red-500">{errors.contactNum}</label>}
+
                                         </div>
                                     </div>
                                 </div>
@@ -1166,11 +1178,13 @@ const SCChapter = () => {
                                             <input
                                                 type="text"
                                                 name="address"
-                                                placeholder="ex. Julian"
+                                                placeholder="ex. PMS Caloocan City"
                                                 value={formData.address}
                                                 onChange={handleInputChange}
                                             />
+                                            <label htmlFor="">House Number, Street, and Village Name Only</label>
                                             {errors.address && <label className="text-red-500">{errors.address}</label>}
+
                                         </div>
                                     </div>
                                 </div>

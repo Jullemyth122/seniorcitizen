@@ -102,6 +102,8 @@ const LoginAdmin = () => {
                         <button type="submit" className="login-button px-5 py-3 text-3xl">
                             Login
                         </button>
+
+                        <Link to={'/admin/register'} className="submit-button bg-violet-600 text-white text-center"> Go To Register </Link>
                         {/* {errorMessage && <p className="error-message text-red-500">{errorMessage}</p>} */}
                     </div>
                 </form>

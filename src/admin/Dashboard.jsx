@@ -85,26 +85,27 @@ const Dashboard = () => {
     const processChartData = (data) => {
         const scChapterData = [];
         const dswdData = [];
-        const months = [];
+        const days = [];
     
+        // Loop through each data item and group by day
         data.forEach(item => {
-            const monthLabel = item.month_year;  // YYYY-MM format
-            if (!months.includes(monthLabel)) {
-                months.push(monthLabel);
+            const dayLabel = item.day;  // 'YYYY-MM-DD' format
+            if (!days.includes(dayLabel)) {
+                days.push(dayLabel);
             }
     
             if (item.type === 'scChapter') {
-                scChapterData.push({ month: monthLabel, count: item.count });
+                scChapterData.push({ day: dayLabel, count: item.count });
             } else if (item.type === 'dswd') {
-                dswdData.push({ month: monthLabel, count: item.count });
+                dswdData.push({ day: dayLabel, count: item.count });
             }
         });
     
-        // Align both datasets by month
-        const alignedData = months.map(month => ({
-            month,
-            scChapterCount: scChapterData.find(item => item.month === month)?.count || 0,
-            dswdCount: dswdData.find(item => item.month === month)?.count || 0,
+        // Align both datasets by day
+        const alignedData = days.map(day => ({
+            day,
+            scChapterCount: scChapterData.find(item => item.day === day)?.count || 0,
+            dswdCount: dswdData.find(item => item.day === day)?.count || 0,
         }));
     
         return alignedData;
@@ -125,24 +126,25 @@ const Dashboard = () => {
 
     // Line Chart Data
     const lineData = {
-        labels: chartData.map(data => data.month),  // Format as YYYY-MM
+        labels: chartData.map(data => data.day),  // Format as YYYY-MM-DD (day-by-day)
         datasets: [
             {
                 label: 'SC Chapter Applicants',
-                data: chartData.map(data => data.scChapterCount),  // Monthly counts for SC Chapter
+                data: chartData.map(data => data.scChapterCount),  // Daily counts for SC Chapter
                 fill: false,
                 borderColor: '#b482ff',
                 tension: 0.1,
             },
             {
                 label: 'DSWD Applicants',
-                data: chartData.map(data => data.dswdCount),  // Monthly counts for DSWD
+                data: chartData.map(data => data.dswdCount),  // Daily counts for DSWD
                 fill: false,
                 borderColor: '#d478ff',
                 tension: 0.1,
             },
         ],
     };
+    
 
 
     const getImagePath = (imagePath) => {
@@ -203,7 +205,7 @@ const Dashboard = () => {
                         {/* Line Chart */}
                         <div className="line-chart">
                             <h3>Applicants Over Time</h3>
-                            <Line data={lineData} width={800} height={400} />
+                            <Line data={lineData} width={600} height={400} />
                         </div>
                     </div>
 

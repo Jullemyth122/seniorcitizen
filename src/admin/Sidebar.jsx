@@ -51,10 +51,10 @@ const Sidebar = ({ getImagePath, adminData }) => {
                 <div className="sidebar-nav">
                     <h1> System Utilities </h1>
                     <div className="sidebar-ul">
-                        <NavLink activeclassname="active" to={'/admin/access'}>
+                        <NavLink activeclassname="active" to={'/admin/changeaccuser'}>
                             <h3> Change User Access Level </h3>
                         </NavLink>
-                        <NavLink activeclassname="active" to={'/admin/officers'}>
+                        <NavLink activeclassname="active" to={'/admin/changeofficers'}>
                             <h3> Change Officers </h3>
                         </NavLink>
                     </div>
